@@ -1,0 +1,28 @@
+﻿<Window x:Class="Security_Threats.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Security_Threats"
+        mc:Ignorable="d"
+        Title="Угрозы безопасности информации" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFC6E6E3">
+    <Grid>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="311" Margin="0,60,0,0"  VerticalAlignment="Top" Width="784" IsReadOnly="True" AutoGenerateColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Идентификатор УБИ" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Наименование УБИ" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Источник угрозы (характеристика и потенциал нарушителя)" Binding="{Binding Source}"/>
+                <DataGridTextColumn Header="Объект воздействия" Binding="{Binding Impact}"/>
+                <DataGridTextColumn Header="Нарушение конфиденциальности" Binding="{Binding Confidentiality}"/>
+                <DataGridTextColumn Header="Нарушение целостности" Binding="{Binding Integrity}"/>
+                <DataGridTextColumn Header="Нарушение доступности" Binding="{Binding Accessibility}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="След" Click="Next_Button_Click" Margin="89,17,639,374"/>
+        <Button Content="Пред" Click="Previous_Button_Click" Margin="10,17,718,374"   />
+        <Button Content="Сокращенный вид" Click="Shrink_Button_Click" Margin="298,381,316,10"   />
+        <Button Content="Обновить" Click="Update_Button_Click" Margin="678.977,10,10,374" Grid.Column="1"/>
+        <Button Content="Сохранить" Click="Save_Button_Click" Margin="691,381,10,8"/>
+    </Grid>
+</Window>
